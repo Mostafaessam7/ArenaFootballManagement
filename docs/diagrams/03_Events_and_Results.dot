@@ -1,0 +1,15 @@
+digraph Arena { graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.30", ranksep="0.45", splines=polyline, label="Events results and player statistics", labelloc=t, fontsize=18, fontname="Arial"]; node [shape=plain, fontname="Arial", fontsize=13]; edge [color="#64748b", fontname="Arial", fontsize=10, arrowsize=0.8, dir=both, arrowtail=tee, arrowhead=odotcrow];
+Events [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Events</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK VenueId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TournamentId ?</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK HomeTeamId ?</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK AwayTeamId ?</TD></TR></TABLE>>];
+MatchPlayerStats [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>MatchPlayerStats</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK MatchId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TournamentId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TeamId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK PlayerId</TD></TR></TABLE>>];
+ResultAudits [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>ResultAudits</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK MatchId</TD></TR></TABLE>>];
+TournamentRosters [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>TournamentRosters</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TournamentId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TeamId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK PlayerId</TD></TR></TABLE>>];
+TournamentTeams [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>TournamentTeams</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TournamentId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TeamId</TD></TR></TABLE>>];
+Venues [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Venues</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR></TABLE>>];
+TournamentTeams -> Events [arrowtail=teeodot, label="away"];
+TournamentTeams -> Events [arrowtail=teeodot, label="home"];
+Venues -> Events [arrowtail=teetee, label=""];
+Events -> MatchPlayerStats [arrowtail=teetee, label=""];
+TournamentRosters -> MatchPlayerStats [arrowtail=teetee, label=""];
+Events -> ResultAudits [arrowtail=teetee, label=""];
+TournamentTeams -> TournamentRosters [arrowtail=teetee, label=""];
+}

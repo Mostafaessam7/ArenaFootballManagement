@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1120" viewBox="0 0 1500 1120">
+ <rect width="1500" height="1120" fill="white"/>
+ <style>text{font-family:Arial,sans-serif;fill:#111827}.h{font-size:34px;font-weight:bold}.t{font-size:24px}.s{font-size:22px}.box{fill:#f8fafc;stroke:#64748b;stroke-width:2.5}</style>
+ <text x="750" y="58" text-anchor="middle" class="h">Enhanced ER model of sports events</text>
+ <rect x="420" y="110" width="660" height="240" rx="8" class="box"/>
+ <text x="750" y="153" text-anchor="middle" class="h">SportEvent</text>
+ <text x="452" y="196" class="t">Id PK · Title · VenueId FK · OrganizerId FK</text>
+ <text x="452" y="237" class="t">StartsAtUtc · EndsAtUtc · Status</text>
+ <text x="452" y="278" class="t">CreatedUtc · Version</text>
+ <text x="452" y="319" class="s">Abstract supertype</text>
+ <path d="M743 350V423 M757 350V423" stroke="#334155" stroke-width="3"/>
+ <circle cx="750" cy="458" r="35" fill="white" stroke="#334155" stroke-width="3"/>
+ <text x="750" y="469" text-anchor="middle" class="h">d</text>
+ <text x="830" y="411" class="t">Double line means TOTAL participation</text>
+ <text x="830" y="451" class="t">d means DISJOINT subtypes</text>
+ <path d="M725 483 L380 580 M775 483 L1120 580" stroke="#334155" stroke-width="3" fill="none"/>
+ <rect x="70" y="580" width="620" height="250" rx="8" class="box"/>
+ <text x="380" y="624" text-anchor="middle" class="h">MatchEvent</text>
+ <text x="100" y="669" class="t">TournamentId · HomeTeamId · AwayTeamId</text>
+ <text x="100" y="711" class="t">RoundNumber · Leg · HomeScore · AwayScore</text>
+ <text x="100" y="754" class="s">Teams reference tournament registrations</text>
+ <text x="100" y="795" class="s">Finished matches require both final scores</text>
+ <rect x="810" y="580" width="620" height="250" rx="8" class="box"/>
+ <text x="1120" y="624" text-anchor="middle" class="h">CommunityEvent</text>
+ <text x="840" y="669" class="t">Description</text>
+ <text x="840" y="711" class="s">Football fan days and related events</text>
+ <text x="840" y="754" class="s">No teams, tournament or score columns</text>
+ <text x="840" y="795" class="s">Uses the same ticketing workflow</text>
+ <text x="80" y="909" class="t">Every event is exactly one subtype. Every subtype inherits the event identifier.</text>
+ <text x="80" y="955" class="t">Mapping: one Events table using EventType = Match or Community.</text>
+ <text x="80" y="1001" class="t">CHECK constraints enforce subtype columns and result states in SQL Server.</text>
+ <text x="80" y="1047" class="t">Table Per Hierarchy avoids extra joins while preserving one ticketable event identity.</text>
+ </svg>

@@ -1,0 +1,176 @@
+erDiagram
+    Bookings {
+        int Id PK
+        datetime2 CancelledUtc
+        datetime2 CreatedUtc
+        nvarchar IdempotencyKey
+        int Quantity
+        nvarchar Status
+        int TicketOfferId FK
+        decimal UnitPrice
+        int UserId FK
+        uniqueidentifier Version
+    }
+    Events {
+        int Id PK
+        int AwayScore
+        int AwayTeamId FK
+        datetime2 CreatedUtc
+        nvarchar Description
+        datetime2 EndsAtUtc
+        nvarchar EventType
+        int HomeScore
+        int HomeTeamId FK
+        int Leg
+        int OrganizerId FK
+        int RoundNumber
+        datetime2 StartsAtUtc
+        nvarchar Status
+        nvarchar Title
+        int TournamentId FK
+        int VenueId FK
+        uniqueidentifier Version
+    }
+    MatchPlayerStats {
+        int Id PK
+        int Assists
+        datetime2 CreatedUtc
+        int Goals
+        int MatchId FK
+        int MinutesPlayed
+        int PlayerId FK
+        int RedCards
+        int TeamId FK
+        int TournamentId FK
+        uniqueidentifier Version
+        int YellowCards
+    }
+    PlayerMemberships {
+        int Id PK
+        datetime2 CreatedUtc
+        date JoinedOn
+        date LeftOn
+        int PlayerId FK
+        int TeamId FK
+        uniqueidentifier Version
+    }
+    Players {
+        int Id PK
+        date BirthDate
+        datetime2 CreatedUtc
+        nvarchar FullName
+        nvarchar Nationality
+        nvarchar Position
+        uniqueidentifier Version
+    }
+    ResultAudits {
+        int Id PK
+        int ActorId FK
+        int AwayScore
+        datetime2 CreatedUtc
+        int HomeScore
+        int MatchId FK
+        int PreviousAwayScore
+        int PreviousHomeScore
+        nvarchar Reason
+        uniqueidentifier Version
+    }
+    Teams {
+        int Id PK
+        nvarchar City
+        nvarchar Code
+        datetime2 CreatedUtc
+        bit IsActive
+        int ManagerId FK
+        nvarchar Name
+        uniqueidentifier Version
+    }
+    TicketOffers {
+        int Id PK
+        int Capacity
+        datetime2 CreatedUtc
+        int EventId FK
+        nvarchar Name
+        decimal Price
+        datetime2 SalesEndUtc
+        datetime2 SalesStartUtc
+        int SoldQuantity
+        uniqueidentifier Version
+    }
+    Tickets {
+        int Id PK
+        int BookingId FK
+        int CheckedInById FK
+        datetime2 CheckedInUtc
+        nvarchar Code
+        datetime2 CreatedUtc
+        uniqueidentifier Version
+    }
+    TournamentRosters {
+        int Id PK
+        datetime2 CreatedUtc
+        int PlayerId FK
+        int ShirtNumber
+        int TeamId FK
+        int TournamentId FK
+        uniqueidentifier Version
+    }
+    Tournaments {
+        int Id PK
+        datetime2 CreatedUtc
+        date EndDate
+        nvarchar Name
+        int OrganizerId FK
+        nvarchar Season
+        date StartDate
+        nvarchar Status
+        uniqueidentifier Version
+    }
+    TournamentTeams {
+        int Id PK
+        datetime2 CreatedUtc
+        int TeamId FK
+        int TournamentId FK
+        uniqueidentifier Version
+    }
+    Users {
+        int Id PK
+        datetime2 CreatedUtc
+        nvarchar Email
+        nvarchar FullName
+        bit IsActive
+        nvarchar NormalizedEmail
+        nvarchar PasswordHash
+        nvarchar Role
+        uniqueidentifier Version
+    }
+    Venues {
+        int Id PK
+        nvarchar Address
+        int Capacity
+        nvarchar City
+        datetime2 CreatedUtc
+        nvarchar Name
+        uniqueidentifier Version
+    }
+    TicketOffers ||--o{ Bookings : "TicketOfferId"
+    Users ||--o{ Bookings : "UserId"
+    TournamentTeams |o--o{ Events : "TournamentId and AwayTeamId"
+    TournamentTeams |o--o{ Events : "TournamentId and HomeTeamId"
+    Users ||--o{ Events : "OrganizerId"
+    Venues ||--o{ Events : "VenueId"
+    Events ||--o{ MatchPlayerStats : "MatchId"
+    TournamentRosters ||--o{ MatchPlayerStats : "TournamentId and TeamId and PlayerId"
+    Players ||--o{ PlayerMemberships : "PlayerId"
+    Teams ||--o{ PlayerMemberships : "TeamId"
+    Events ||--o{ ResultAudits : "MatchId"
+    Users ||--o{ ResultAudits : "ActorId"
+    Users |o--o{ Teams : "ManagerId"
+    Events ||--o{ TicketOffers : "EventId"
+    Bookings ||--o{ Tickets : "BookingId"
+    Users |o--o{ Tickets : "CheckedInById"
+    Players ||--o{ TournamentRosters : "PlayerId"
+    TournamentTeams ||--o{ TournamentRosters : "TournamentId and TeamId"
+    Users ||--o{ Tournaments : "OrganizerId"
+    Teams ||--o{ TournamentTeams : "TeamId"
+    Tournaments ||--o{ TournamentTeams : "TournamentId"

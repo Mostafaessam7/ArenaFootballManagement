@@ -1,0 +1,3 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup><ProjectReference Include="../Arena.Domain/Arena.Domain.csproj" /></ItemGroup>
+</Project>

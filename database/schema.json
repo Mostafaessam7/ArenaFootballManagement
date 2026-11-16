@@ -1,0 +1,1561 @@
+[
+  {
+    "Name": "Bookings",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "CancelledUtc",
+        "StoreType": "datetime2",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "IdempotencyKey",
+        "StoreType": "nvarchar(64)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Quantity",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Status",
+        "StoreType": "nvarchar(20)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TicketOfferId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "UnitPrice",
+        "StoreType": "decimal(12,2)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "UserId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_Bookings_TicketOffers_TicketOfferId",
+        "Columns": [
+          "TicketOfferId"
+        ],
+        "ReferencedTable": "TicketOffers",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_Bookings_Users_UserId",
+        "Columns": [
+          "UserId"
+        ],
+        "ReferencedTable": "Users",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Bookings",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_Bookings_TicketOfferId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "TicketOfferId"
+        ]
+      },
+      {
+        "Name": "IX_Bookings_UserId_IdempotencyKey",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "UserId",
+          "IdempotencyKey"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Booking_Quantity",
+        "Sql": "[Quantity] BETWEEN 1 AND 10 AND [UnitPrice] \u003E= 0"
+      },
+      {
+        "Name": "CK_Booking_Status",
+        "Sql": "([Status] = \u0027Confirmed\u0027 AND [CancelledUtc] IS NULL) OR ([Status] = \u0027Cancelled\u0027 AND [CancelledUtc] IS NOT NULL)"
+      }
+    ]
+  },
+  {
+    "Name": "Events",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "AwayScore",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "AwayTeamId",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Description",
+        "StoreType": "nvarchar(2000)",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "EndsAtUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "EventType",
+        "StoreType": "nvarchar(20)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "HomeScore",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "HomeTeamId",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Leg",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "OrganizerId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "RoundNumber",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "StartsAtUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Status",
+        "StoreType": "nvarchar(20)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Title",
+        "StoreType": "nvarchar(180)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TournamentId",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "VenueId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_Events_TournamentTeams_TournamentId_AwayTeamId",
+        "Columns": [
+          "TournamentId",
+          "AwayTeamId"
+        ],
+        "ReferencedTable": "TournamentTeams",
+        "ReferencedColumns": [
+          "TournamentId",
+          "TeamId"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_Events_TournamentTeams_TournamentId_HomeTeamId",
+        "Columns": [
+          "TournamentId",
+          "HomeTeamId"
+        ],
+        "ReferencedTable": "TournamentTeams",
+        "ReferencedColumns": [
+          "TournamentId",
+          "TeamId"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_Events_Users_OrganizerId",
+        "Columns": [
+          "OrganizerId"
+        ],
+        "ReferencedTable": "Users",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_Events_Venues_VenueId",
+        "Columns": [
+          "VenueId"
+        ],
+        "ReferencedTable": "Venues",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Events",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_Events_OrganizerId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "OrganizerId"
+        ]
+      },
+      {
+        "Name": "IX_Events_TournamentId_AwayTeamId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "TournamentId",
+          "AwayTeamId"
+        ]
+      },
+      {
+        "Name": "IX_Events_TournamentId_HomeTeamId_AwayTeamId_Leg",
+        "IsUnique": true,
+        "Filter": "[EventType] = \u0027Match\u0027",
+        "Columns": [
+          "TournamentId",
+          "HomeTeamId",
+          "AwayTeamId",
+          "Leg"
+        ]
+      },
+      {
+        "Name": "IX_Events_VenueId_StartsAtUtc",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "VenueId",
+          "StartsAtUtc"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Event_Dates",
+        "Sql": "[EndsAtUtc] \u003E [StartsAtUtc]"
+      },
+      {
+        "Name": "CK_Event_Specialization",
+        "Sql": "([EventType] = \u0027Match\u0027 AND [TournamentId] IS NOT NULL AND [HomeTeamId] IS NOT NULL AND [AwayTeamId] IS NOT NULL AND [RoundNumber] IS NOT NULL AND [Leg] IS NOT NULL AND [Description] IS NULL) OR ([EventType] = \u0027Community\u0027 AND [Description] IS NOT NULL AND [TournamentId] IS NULL AND [HomeTeamId] IS NULL AND [AwayTeamId] IS NULL AND [RoundNumber] IS NULL AND [Leg] IS NULL AND [HomeScore] IS NULL AND [AwayScore] IS NULL)"
+      },
+      {
+        "Name": "CK_Event_Status",
+        "Sql": "[Status] IN (\u0027Scheduled\u0027,\u0027Finished\u0027,\u0027Cancelled\u0027)"
+      },
+      {
+        "Name": "CK_Match_Round",
+        "Sql": "[RoundNumber] IS NULL OR ([RoundNumber] \u003E 0 AND [Leg] BETWEEN 1 AND 2)"
+      },
+      {
+        "Name": "CK_Match_Scores",
+        "Sql": "[EventType] \u003C\u003E \u0027Match\u0027 OR (([Status] = \u0027Finished\u0027 AND [HomeScore] IS NOT NULL AND [AwayScore] IS NOT NULL AND [HomeScore] BETWEEN 0 AND 99 AND [AwayScore] BETWEEN 0 AND 99) OR ([Status] \u003C\u003E \u0027Finished\u0027 AND [HomeScore] IS NULL AND [AwayScore] IS NULL))"
+      },
+      {
+        "Name": "CK_Match_Teams",
+        "Sql": "[HomeTeamId] IS NULL OR [HomeTeamId] \u003C\u003E [AwayTeamId]"
+      }
+    ]
+  },
+  {
+    "Name": "MatchPlayerStats",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "Assists",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Goals",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "MatchId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "MinutesPlayed",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "PlayerId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "RedCards",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TeamId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TournamentId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "YellowCards",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_MatchPlayerStats_Events_MatchId",
+        "Columns": [
+          "MatchId"
+        ],
+        "ReferencedTable": "Events",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_MatchPlayerStats_TournamentRosters_TournamentId_TeamId_PlayerId",
+        "Columns": [
+          "TournamentId",
+          "TeamId",
+          "PlayerId"
+        ],
+        "ReferencedTable": "TournamentRosters",
+        "ReferencedColumns": [
+          "TournamentId",
+          "TeamId",
+          "PlayerId"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_MatchPlayerStats",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_MatchPlayerStats_MatchId_PlayerId",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "MatchId",
+          "PlayerId"
+        ]
+      },
+      {
+        "Name": "IX_MatchPlayerStats_TournamentId_TeamId_PlayerId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "TournamentId",
+          "TeamId",
+          "PlayerId"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_PlayerStats_Range",
+        "Sql": "[Goals] BETWEEN 0 AND 99 AND [Assists] BETWEEN 0 AND 99 AND [YellowCards] BETWEEN 0 AND 2 AND [RedCards] BETWEEN 0 AND 1 AND [MinutesPlayed] BETWEEN 0 AND 130"
+      }
+    ]
+  },
+  {
+    "Name": "PlayerMemberships",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "JoinedOn",
+        "StoreType": "date",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "LeftOn",
+        "StoreType": "date",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "PlayerId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TeamId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_PlayerMemberships_Players_PlayerId",
+        "Columns": [
+          "PlayerId"
+        ],
+        "ReferencedTable": "Players",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_PlayerMemberships_Teams_TeamId",
+        "Columns": [
+          "TeamId"
+        ],
+        "ReferencedTable": "Teams",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_PlayerMemberships",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_PlayerMemberships_PlayerId",
+        "IsUnique": true,
+        "Filter": "[LeftOn] IS NULL",
+        "Columns": [
+          "PlayerId"
+        ]
+      },
+      {
+        "Name": "IX_PlayerMemberships_TeamId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "TeamId"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Membership_Dates",
+        "Sql": "[LeftOn] IS NULL OR [LeftOn] \u003E [JoinedOn]"
+      }
+    ]
+  },
+  {
+    "Name": "Players",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "BirthDate",
+        "StoreType": "date",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "FullName",
+        "StoreType": "nvarchar(120)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Nationality",
+        "StoreType": "nvarchar(80)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Position",
+        "StoreType": "nvarchar(20)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Players",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [],
+    "Checks": []
+  },
+  {
+    "Name": "ResultAudits",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "ActorId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "AwayScore",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "HomeScore",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "MatchId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "PreviousAwayScore",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "PreviousHomeScore",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Reason",
+        "StoreType": "nvarchar(500)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_ResultAudits_Events_MatchId",
+        "Columns": [
+          "MatchId"
+        ],
+        "ReferencedTable": "Events",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_ResultAudits_Users_ActorId",
+        "Columns": [
+          "ActorId"
+        ],
+        "ReferencedTable": "Users",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_ResultAudits",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_ResultAudits_ActorId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "ActorId"
+        ]
+      },
+      {
+        "Name": "IX_ResultAudits_MatchId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "MatchId"
+        ]
+      }
+    ],
+    "Checks": []
+  },
+  {
+    "Name": "Teams",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "City",
+        "StoreType": "nvarchar(80)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Code",
+        "StoreType": "nvarchar(10)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "IsActive",
+        "StoreType": "bit",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "ManagerId",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Name",
+        "StoreType": "nvarchar(120)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_Teams_Users_ManagerId",
+        "Columns": [
+          "ManagerId"
+        ],
+        "ReferencedTable": "Users",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Teams",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_Teams_Code",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "Code"
+        ]
+      },
+      {
+        "Name": "IX_Teams_ManagerId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "ManagerId"
+        ]
+      }
+    ],
+    "Checks": []
+  },
+  {
+    "Name": "TicketOffers",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "Capacity",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "EventId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Name",
+        "StoreType": "nvarchar(80)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Price",
+        "StoreType": "decimal(12,2)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "SalesEndUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "SalesStartUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "SoldQuantity",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_TicketOffers_Events_EventId",
+        "Columns": [
+          "EventId"
+        ],
+        "ReferencedTable": "Events",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_TicketOffers",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_TicketOffers_EventId_Name",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "EventId",
+          "Name"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Offer_Dates",
+        "Sql": "[SalesEndUtc] \u003E [SalesStartUtc]"
+      },
+      {
+        "Name": "CK_Offer_Inventory",
+        "Sql": "[Capacity] \u003E 0 AND [SoldQuantity] \u003E= 0 AND [SoldQuantity] \u003C= [Capacity]"
+      },
+      {
+        "Name": "CK_Offer_Price",
+        "Sql": "[Price] \u003E= 0"
+      }
+    ]
+  },
+  {
+    "Name": "Tickets",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "BookingId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CheckedInById",
+        "StoreType": "int",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CheckedInUtc",
+        "StoreType": "datetime2",
+        "IsNullable": true,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Code",
+        "StoreType": "nvarchar(64)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_Tickets_Bookings_BookingId",
+        "Columns": [
+          "BookingId"
+        ],
+        "ReferencedTable": "Bookings",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_Tickets_Users_CheckedInById",
+        "Columns": [
+          "CheckedInById"
+        ],
+        "ReferencedTable": "Users",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Tickets",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_Tickets_BookingId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "BookingId"
+        ]
+      },
+      {
+        "Name": "IX_Tickets_CheckedInById",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "CheckedInById"
+        ]
+      },
+      {
+        "Name": "IX_Tickets_Code",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "Code"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Ticket_CheckIn",
+        "Sql": "([CheckedInUtc] IS NULL AND [CheckedInById] IS NULL) OR ([CheckedInUtc] IS NOT NULL AND [CheckedInById] IS NOT NULL)"
+      }
+    ]
+  },
+  {
+    "Name": "TournamentRosters",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "PlayerId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "ShirtNumber",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TeamId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TournamentId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_TournamentRosters_Players_PlayerId",
+        "Columns": [
+          "PlayerId"
+        ],
+        "ReferencedTable": "Players",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_TournamentRosters_TournamentTeams_TournamentId_TeamId",
+        "Columns": [
+          "TournamentId",
+          "TeamId"
+        ],
+        "ReferencedTable": "TournamentTeams",
+        "ReferencedColumns": [
+          "TournamentId",
+          "TeamId"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "AK_TournamentRosters_TournamentId_TeamId_PlayerId",
+        "Columns": [
+          "TournamentId",
+          "TeamId",
+          "PlayerId"
+        ]
+      },
+      {
+        "Name": "PK_TournamentRosters",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_TournamentRosters_PlayerId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "PlayerId"
+        ]
+      },
+      {
+        "Name": "IX_TournamentRosters_TournamentId_PlayerId",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "TournamentId",
+          "PlayerId"
+        ]
+      },
+      {
+        "Name": "IX_TournamentRosters_TournamentId_TeamId_ShirtNumber",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "TournamentId",
+          "TeamId",
+          "ShirtNumber"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Roster_Shirt",
+        "Sql": "[ShirtNumber] BETWEEN 1 AND 99"
+      }
+    ]
+  },
+  {
+    "Name": "Tournaments",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "EndDate",
+        "StoreType": "date",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Name",
+        "StoreType": "nvarchar(160)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "OrganizerId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Season",
+        "StoreType": "nvarchar(30)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "StartDate",
+        "StoreType": "date",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Status",
+        "StoreType": "nvarchar(30)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_Tournaments_Users_OrganizerId",
+        "Columns": [
+          "OrganizerId"
+        ],
+        "ReferencedTable": "Users",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Tournaments",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_Tournaments_Name_Season",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "Name",
+          "Season"
+        ]
+      },
+      {
+        "Name": "IX_Tournaments_OrganizerId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "OrganizerId"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Tournament_Dates",
+        "Sql": "[EndDate] \u003E= [StartDate]"
+      },
+      {
+        "Name": "CK_Tournament_Status",
+        "Sql": "[Status] IN (\u0027Draft\u0027,\u0027RegistrationOpen\u0027,\u0027InProgress\u0027,\u0027Completed\u0027)"
+      }
+    ]
+  },
+  {
+    "Name": "TournamentTeams",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TeamId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "TournamentId",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [
+      {
+        "Name": "FK_TournamentTeams_Teams_TeamId",
+        "Columns": [
+          "TeamId"
+        ],
+        "ReferencedTable": "Teams",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      },
+      {
+        "Name": "FK_TournamentTeams_Tournaments_TournamentId",
+        "Columns": [
+          "TournamentId"
+        ],
+        "ReferencedTable": "Tournaments",
+        "ReferencedColumns": [
+          "Id"
+        ],
+        "DeleteAction": "Restrict"
+      }
+    ],
+    "UniqueConstraints": [
+      {
+        "Name": "AK_TournamentTeams_TournamentId_TeamId",
+        "Columns": [
+          "TournamentId",
+          "TeamId"
+        ]
+      },
+      {
+        "Name": "PK_TournamentTeams",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_TournamentTeams_TeamId",
+        "IsUnique": false,
+        "Filter": null,
+        "Columns": [
+          "TeamId"
+        ]
+      }
+    ],
+    "Checks": []
+  },
+  {
+    "Name": "Users",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Email",
+        "StoreType": "nvarchar(256)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "FullName",
+        "StoreType": "nvarchar(120)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "IsActive",
+        "StoreType": "bit",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "NormalizedEmail",
+        "StoreType": "nvarchar(256)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "PasswordHash",
+        "StoreType": "nvarchar(512)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Role",
+        "StoreType": "nvarchar(30)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Users",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [
+      {
+        "Name": "IX_Users_NormalizedEmail",
+        "IsUnique": true,
+        "Filter": null,
+        "Columns": [
+          "NormalizedEmail"
+        ]
+      }
+    ],
+    "Checks": [
+      {
+        "Name": "CK_Users_Role",
+        "Sql": "[Role] IN (\u0027Admin\u0027,\u0027Organizer\u0027,\u0027TeamManager\u0027,\u0027Spectator\u0027,\u0027GateStaff\u0027)"
+      }
+    ]
+  },
+  {
+    "Name": "Venues",
+    "Columns": [
+      {
+        "Name": "Id",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": true
+      },
+      {
+        "Name": "Address",
+        "StoreType": "nvarchar(300)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Capacity",
+        "StoreType": "int",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "City",
+        "StoreType": "nvarchar(80)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "CreatedUtc",
+        "StoreType": "datetime2",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Name",
+        "StoreType": "nvarchar(160)",
+        "IsNullable": false,
+        "PrimaryKey": false
+      },
+      {
+        "Name": "Version",
+        "StoreType": "uniqueidentifier",
+        "IsNullable": false,
+        "PrimaryKey": false
+      }
+    ],
+    "ForeignKeys": [],
+    "UniqueConstraints": [
+      {
+        "Name": "PK_Venues",
+        "Columns": [
+          "Id"
+        ]
+      }
+    ],
+    "Indexes": [],
+    "Checks": [
+      {
+        "Name": "CK_Venue_Capacity",
+        "Sql": "[Capacity] \u003E 0"
+      }
+    ]
+  }
+]

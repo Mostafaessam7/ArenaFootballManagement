@@ -1,0 +1,8 @@
+# Store text files with LF in the repository; each machine checks them out with its native line ending.
+* text=auto
+
+# Binary deliverables: never touch their bytes.
+*.docx binary
+*.png binary
+*.jpg binary
+*.pdf binary

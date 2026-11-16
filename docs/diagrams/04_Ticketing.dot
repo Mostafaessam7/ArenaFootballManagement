@@ -1,0 +1,15 @@
+digraph Arena { graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.30", ranksep="0.45", splines=polyline, label="Ticket inventory reservations and admission", labelloc=t, fontsize=18, fontname="Arial"]; node [shape=plain, fontname="Arial", fontsize=13]; edge [color="#64748b", fontname="Arial", fontsize=10, arrowsize=0.8, dir=both, arrowtail=tee, arrowhead=odotcrow];
+Bookings [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Bookings</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK UserId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK TicketOfferId</TD></TR></TABLE>>];
+Events [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Events</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK VenueId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK OrganizerId</TD></TR></TABLE>>];
+TicketOffers [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>TicketOffers</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK EventId</TD></TR></TABLE>>];
+Tickets [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Tickets</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK BookingId</TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">FK CheckedInById ?</TD></TR></TABLE>>];
+Users [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Users</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR></TABLE>>];
+Venues [label=<<TABLE BORDER="1" COLOR="#94a3b8" CELLBORDER="0" CELLSPACING="0"><TR><TD BGCOLOR="#e8eef4" CELLPADDING="9"><B>Venues</B></TD></TR><TR><TD ALIGN="LEFT" CELLPADDING="4">PK Id</TD></TR></TABLE>>];
+TicketOffers -> Bookings [arrowtail=teetee, label=""];
+Users -> Bookings [arrowtail=teetee, label=""];
+Users -> Events [arrowtail=teetee, label="organizer"];
+Venues -> Events [arrowtail=teetee, label=""];
+Events -> TicketOffers [arrowtail=teetee, label=""];
+Bookings -> Tickets [arrowtail=teetee, label=""];
+Users -> Tickets [arrowtail=teeodot, label="checked in by"];
+}

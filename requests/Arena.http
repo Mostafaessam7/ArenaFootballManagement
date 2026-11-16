@@ -1,0 +1,65 @@
+@baseUrl = http://localhost:5080
+@token = paste_accessToken_from_register_or_login_here
+@adminToken = paste_admin_accessToken_here
+@bookingId = 1
+
+### Health
+GET {{baseUrl}}/health/ready
+
+### Public fixtures (fresh demo: match 1 played, match 2 in seven days)
+GET {{baseUrl}}/api/v1/events
+
+### League table (fresh demo tournament 1)
+GET {{baseUrl}}/api/v1/tournaments/1/standings
+
+### Ticket inventory (fresh demo event 2; offer 1)
+GET {{baseUrl}}/api/v1/events/2/ticket-offers
+
+### Register a spectator. This example password is only for a local disposable account.
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "fullName": "Demo Spectator",
+  "email": "spectator@example.test",
+  "password": "Local-example-password-42"
+}
+
+### Login with the administrator password you supplied to start-demo.ps1
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "leader@arena.local",
+  "password": "replace_with_your_own_password"
+}
+
+### Reserve two tickets. Repeating this body returns the same booking.
+POST {{baseUrl}}/api/v1/bookings
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "ticketOfferId": 1,
+  "quantity": 2,
+  "idempotencyKey": "demo-reservation-0001"
+}
+
+### View private booking and ticket codes
+GET {{baseUrl}}/api/v1/bookings/{{bookingId}}
+Authorization: Bearer {{token}}
+
+### Cancel before the two-hour cutoff; repeated cancellation is safe
+POST {{baseUrl}}/api/v1/bookings/{{bookingId}}/cancel
+Authorization: Bearer {{token}}
+
+### Administrator example
+POST {{baseUrl}}/api/v1/teams
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "name": "Delta United",
+  "code": "DELTA",
+  "city": "Mansoura"
+}
