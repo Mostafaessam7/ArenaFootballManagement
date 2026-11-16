@@ -2,9 +2,13 @@ using System.Security.Cryptography;
 
 namespace Arena.Application.Features.Bookings;
 
-/// <summary>FR20 to FR23: booking tickets (idempotent), reading own bookings and cancelling.</summary>
-public sealed class BookingService(IUnitOfWork unitOfWork, ICompetitionQueries queries, TimeProvider clock)
-    : ServiceBase(unitOfWork, clock)
+/// <summary>
+/// FR20 to FR23: booking tickets (idempotent), reading own bookings and cancelling.
+/// Concurrency: stock changes go through <see cref="ITicketInventory"/> (one conditional UPDATE),
+/// duplicate keys are stopped by the unique index, and a double cancel by the booking's Version.
+/// </summary>
+public sealed class BookingService(IUnitOfWork unitOfWork, ICompetitionQueries queries,
+    ITicketInventory inventory, TimeProvider clock) : ServiceBase(unitOfWork, clock)
 {
     public Task<PageResult<Booking>> MineAsync(int userId, int page, int pageSize, CancellationToken ct) =>
         PageAsync<Booking>(page, pageSize, x => x.UserId == userId, ct);
@@ -18,11 +22,13 @@ public sealed class BookingService(IUnitOfWork unitOfWork, ICompetitionQueries q
     }
 
     /// <summary>
-    /// Stock check, stock update, booking and tickets are saved in one transaction.
+    /// Stock reservation, booking and tickets are saved in one transaction; any failure rolls all of it back.
     /// Repeating the same key and body returns the first booking; a different body is rejected.
+    /// Two identical requests in flight at the same moment: one succeeds, the other gets 409 from the
+    /// unique index and a retry returns the first booking.
     /// </summary>
     public Task<BookingDto> BookAsync(CreateBookingRequest request, int userId, CancellationToken ct) =>
-        Uow.SerializableAsync(async () =>
+        Uow.InTransactionAsync(async () =>
         {
             Guard.Against(request.Quantity is < 1 or > 10, "Quantity must be between 1 and 10.");
             var previous = await Repo<Booking>().FindAsync(x => x.UserId == userId && x.IdempotencyKey == request.IdempotencyKey, ct);
@@ -36,8 +42,8 @@ public sealed class BookingService(IUnitOfWork unitOfWork, ICompetitionQueries q
             var item = await GetRequiredAsync<SportEvent>(offer.EventId, ct);
             Guard.Against(item.Status != EventStatus.Scheduled || Now >= item.StartsAtUtc ||
                 Now < offer.SalesStartUtc || Now >= offer.SalesEndUtc, "Ticket sales are closed.");
-            Guard.Against(offer.Capacity - offer.SoldQuantity < request.Quantity, "Not enough tickets remain.", "sold_out");
-            offer.SoldQuantity += request.Quantity;
+            // The database decides: the row is updated only if enough tickets remain at this instant.
+            Guard.Against(!await inventory.TryReserveAsync(offer.Id, request.Quantity, ct), "Not enough tickets remain.", "sold_out");
             var booking = new Booking
             {
                 UserId = userId, TicketOfferId = offer.Id, Quantity = request.Quantity,
@@ -51,9 +57,13 @@ public sealed class BookingService(IUnitOfWork unitOfWork, ICompetitionQueries q
             return await ToDtoAsync(booking, ct);
         }, ct);
 
-    /// <summary>Allowed until two hours before the event and only if no ticket was used. Stock returns once.</summary>
+    /// <summary>
+    /// Allowed until two hours before the event and only if no ticket was used. Stock returns once:
+    /// the booking row is updated first with its Version, so a second concurrent cancel fails with 409
+    /// and its transaction (including any stock release) rolls back.
+    /// </summary>
     public Task<BookingDto> CancelAsync(int id, int userId, bool admin, CancellationToken ct) =>
-        Uow.SerializableAsync(async () =>
+        Uow.InTransactionAsync(async () =>
         {
             var booking = await GetRequiredAsync<Booking>(id, ct);
             if (!admin && booking.UserId != userId) throw new BusinessException(404, "not_found", "Booking was not found.");
@@ -61,12 +71,14 @@ public sealed class BookingService(IUnitOfWork unitOfWork, ICompetitionQueries q
             var offer = await GetRequiredAsync<TicketOffer>(booking.TicketOfferId, ct);
             var item = await GetRequiredAsync<SportEvent>(offer.EventId, ct);
             Guard.Against(Now >= item.StartsAtUtc.AddHours(-2), "Cancellations close two hours before the event.");
-            Guard.Against(await Repo<Ticket>().AnyAsync(x => x.BookingId == id && x.CheckedInUtc != null, ct),
-                "A checked-in booking cannot be cancelled.");
             booking.Status = BookingStatus.Cancelled;
             booking.CancelledUtc = Now;
-            offer.SoldQuantity -= booking.Quantity;
+            // Saving now locks the booking row; a gate check-in for this booking waits until we finish.
             await Uow.SaveChangesAsync(ct);
+            // Checked after taking the lock, so a check-in that committed just before us is always seen.
+            Guard.Against(await Repo<Ticket>().AnyAsync(x => x.BookingId == id && x.CheckedInUtc != null, ct),
+                "A checked-in booking cannot be cancelled.");
+            await inventory.ReleaseAsync(offer.Id, booking.Quantity, ct);
             return await ToDtoAsync(booking, ct);
         }, ct);
 

@@ -19,8 +19,11 @@ public sealed class ApiExceptionHandler(ILogger<ApiExceptionHandler> logger) : I
                 (409, "constraint_conflict", "This request violates a relationship, uniqueness, or data rule."),
             DbUpdateException { InnerException: SqliteException { SqliteErrorCode: 19 } } =>
                 (409, "constraint_conflict", "This request violates a relationship, uniqueness, or data rule."),
-            SqlException { Number: 1205 } => (409, "transaction_conflict", "A concurrent transaction conflicted. Retry the complete request."),
-            SqliteException { SqliteErrorCode: 5 or 6 } => (409, "transaction_conflict", "Database is busy. Retry the complete request."),
+            // 1205 = chosen as deadlock victim. EF wraps it in DbUpdateException when it happens during SaveChanges.
+            SqlException { Number: 1205 } or DbUpdateException { InnerException: SqlException { Number: 1205 } } =>
+                (409, "transaction_conflict", "A concurrent transaction conflicted. Retry the complete request."),
+            SqliteException { SqliteErrorCode: 5 or 6 } or DbUpdateException { InnerException: SqliteException { SqliteErrorCode: 5 or 6 } } =>
+                (409, "transaction_conflict", "Database is busy. Retry the complete request."),
             _ => (500, "internal_error", "An unexpected error occurred. Use the trace ID when reporting the issue.")
         };
         if (status == 500) logger.LogError(exception, "Unhandled error {TraceId}", context.TraceIdentifier);

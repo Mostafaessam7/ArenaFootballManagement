@@ -12,6 +12,7 @@ using Arena.Application.Features.Tournaments;
 using Arena.Application.Features.Teams;
 using Arena.Application.Features.Venues;
 using Arena.Infrastructure.Queries;
+using Arena.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
@@ -41,6 +42,7 @@ public static class ServiceCollectionExtensions
         });
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<ICompetitionQueries, CompetitionQueries>();
+        services.AddScoped<ITicketInventory, TicketInventory>();
         return services;
     }
 

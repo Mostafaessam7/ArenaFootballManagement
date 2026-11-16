@@ -8,6 +8,7 @@ using Arena.Domain.Entities;
 using Arena.Domain.Enums;
 using Arena.Infrastructure.Persistence;
 using Arena.Infrastructure.Queries;
+using Arena.Infrastructure.Repositories;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,7 +47,7 @@ public sealed class TestDatabase : IAsyncDisposable
         Events = new(uow, queries, Clock);
         Results = new(uow, queries, Clock);
         Tickets = new(uow, queries, Clock);
-        Bookings = new(uow, queries, Clock);
+        Bookings = new(uow, queries, new TicketInventory(Db), Clock);
     }
 
     public ArenaDbContext NewContext() => new(new DbContextOptionsBuilder<ArenaDbContext>().UseSqlite(Connection).Options);

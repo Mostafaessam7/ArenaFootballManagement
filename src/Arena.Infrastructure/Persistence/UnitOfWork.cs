@@ -17,11 +17,17 @@ public sealed class UnitOfWork(ArenaDbContext db) : IUnitOfWork
 
     public Task<int> SaveChangesAsync(CancellationToken ct = default) => db.SaveChangesAsync(ct);
 
-    /// <summary>Runs <paramref name="action"/> in a serializable transaction, or joins the one already open.</summary>
-    public async Task<T> SerializableAsync<T>(Func<Task<T>> action, CancellationToken ct = default)
+    public Task<T> InTransactionAsync<T>(Func<Task<T>> action, CancellationToken ct = default) =>
+        RunAsync(IsolationLevel.ReadCommitted, action, ct);
+
+    public Task<T> SerializableAsync<T>(Func<Task<T>> action, CancellationToken ct = default) =>
+        RunAsync(IsolationLevel.Serializable, action, ct);
+
+    /// <summary>Runs <paramref name="action"/> in a new transaction, or joins the one already open.</summary>
+    private async Task<T> RunAsync<T>(IsolationLevel isolation, Func<Task<T>> action, CancellationToken ct)
     {
         if (db.Database.CurrentTransaction is not null) return await action();
-        await using var transaction = await db.Database.BeginTransactionAsync(IsolationLevel.Serializable, ct);
+        await using var transaction = await db.Database.BeginTransactionAsync(isolation, ct);
         var result = await action();
         await transaction.CommitAsync(ct);
         return result;

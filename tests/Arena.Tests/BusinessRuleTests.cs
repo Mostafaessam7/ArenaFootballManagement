@@ -104,6 +104,36 @@ public sealed class BusinessRuleTests
         Assert.Equal(1,data.Offer.SoldQuantity);
     }
     [Fact]
+    public async Task CheckedInBooking_CannotBeCancelled_AndStockIsKept()
+    {
+        await using var f=await TestDatabase.CreateAsync();var data=await f.AddOfferAsync();
+        var booking=await f.Bookings.BookAsync(new(data.Offer.Id,2,"checked-cancel-1"),f.Fan.Id,default);
+        // A gate check-in committed by another request (written through a separate context).
+        await using(var gate=f.NewContext())
+        {
+            var ticket=await gate.Tickets.SingleAsync(x=>x.Id==booking.Tickets[0].Id);
+            ticket.CheckedInUtc=f.Clock.Utc;ticket.CheckedInById=f.Admin.Id;await gate.SaveChangesAsync();
+        }
+        await Assert.ThrowsAsync<BusinessException>(()=>f.Bookings.CancelAsync(booking.Id,f.Fan.Id,false,default));
+        // The rejected cancel rolled back completely: booking still confirmed, stock not released.
+        await using var check=f.NewContext();
+        Assert.Equal(2,(await check.TicketOffers.SingleAsync(x=>x.Id==data.Offer.Id)).SoldQuantity);
+        Assert.Equal(BookingStatus.Confirmed,(await check.Bookings.SingleAsync(x=>x.Id==booking.Id)).Status);
+    }
+    [Fact]
+    public async Task Inventory_ReservesOnlyWhatRemains_AndReleaseRestoresIt()
+    {
+        await using var f=await TestDatabase.CreateAsync();var data=await f.AddOfferAsync(3);
+        var inventory=new Arena.Infrastructure.Repositories.TicketInventory(f.Db);
+        Assert.True(await inventory.TryReserveAsync(data.Offer.Id,2,default));
+        Assert.False(await inventory.TryReserveAsync(data.Offer.Id,2,default));
+        Assert.True(await inventory.TryReserveAsync(data.Offer.Id,1,default));
+        Assert.Equal(3,data.Offer.SoldQuantity);
+        await inventory.ReleaseAsync(data.Offer.Id,3,default);
+        Assert.Equal(0,data.Offer.SoldQuantity);
+        await Assert.ThrowsAsync<InvalidOperationException>(()=>inventory.ReleaseAsync(data.Offer.Id,1,default));
+    }
+    [Fact]
     public async Task Concurrency_StaleInventoryWriteIsRejected()
     {
         await using var f=await TestDatabase.CreateAsync();var data=await f.AddOfferAsync(1);
