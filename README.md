@@ -58,20 +58,47 @@ Set-Location 'D:\EraaSoft\Project'
 
 ```text
 src/
-  Arena.Domain/          الكيانات وقيم حالات النظام
-  Arena.Application/     العقود وواجهات المستودعات وحالات الاستخدام وحساب الترتيب
-  Arena.Infrastructure/  DbContext وFluent Mapping وRepositories وMigrations
-  Arena.Api/             Controllers والمصادقة ومعالجة الأخطاء والتهيئة
-tests/Arena.Tests/       اختبارات المنطق والعلاقات وHTTP
-database/               سكربت SQL وتصدير النموذج الفعلي
-docs/                   التحليل والتصميم والمخططات وعقد OpenAPI
-scripts/                تشغيل العرض وتهيئة SQL Server والتحقق
-requests/Arena.http     طلبات جاهزة للتجربة
+  Arena.Domain/
+    Common/Entity.cs            المفتاح وCreatedUtc وVersion لكل جدول
+    Entities/                   كيان واحد في كل ملف (16 كيان)
+    Enums/                      حالات النظام والأدوار
+  Arena.Application/
+    Common/                     ServiceBase وGuard وBusinessException وPageResult
+    Interfaces/                 IRepository وIUnitOfWork وICompetitionQueries
+    Features/<Feature>/         خدمة الـFeature وطلباتها وردودها (DTOs)
+      Auth, Teams, Players, Tournaments, Venues, Events, Results, Tickets, Bookings
+  Arena.Infrastructure/
+    Persistence/                ArenaDbContext وUnitOfWork وDesignTimeFactory
+    Persistence/Configurations/ Fluent Mapping لكل جدول في ملف
+    Repositories/EfRepository.cs
+    Queries/CompetitionQueries.cs  الترتيب والهدافين والتعارض والمخزون
+    Migrations/
+  Arena.Api/
+    Controllers/                Controller واحد في كل ملف
+    Auth/ Errors/ Documentation/ JWT ومعالجة الأخطاء وOpenAPI
+    Setup/                      تسجيل الخدمات (DI) والتهيئة وتصدير المخطط
+tests/Arena.Tests/              اختبارات المنطق والعلاقات وHTTP
+database/                       سكربت SQL وتصدير النموذج الفعلي
+docs/                           التحليل والتصميم والمخططات وعقد OpenAPI
+scripts/                        تشغيل العرض وتهيئة SQL Server والتحقق
+requests/Arena.http             طلبات جاهزة للتجربة
 ```
 
-اتجاه الاعتماد: Application تعتمد على Domain؛ Infrastructure تنفذ واجهات Application؛ Api تجمع الاعتمادات وتستدعي الخدمات. Controllers لا تستخدم DbContext مباشرة.
+اتجاه الاعتماد: Application تعتمد على Domain؛ Infrastructure تنفذ واجهات Application؛ Api تجمع الاعتمادات وتستدعي الخدمات. Controllers لا تستخدم DbContext مباشرة، ولا تبني شروط بحث؛ كل Controller يستدعي خدمة الـFeature بتاعته.
+
+### ملكية الملفات داخل الفريق
+
+كل Feature في فولدر مستقل، فكل عضو يشتغل غالبًا في فولدرات مختلفة ويقل التعارض عند الدمج.
+
+| العضو | Features | Controllers |
+|---|---|---|
+| الثاني | Teams, Players | TeamsController, PlayersController |
+| الثالث | Tournaments, Venues, Events, Results | TournamentsController, VenuesController, EventsController, ResultsController |
+| الرابع | Tickets, Bookings, Auth | TicketsController, BookingsController, AuthController |
+| قائد الفريق | Common, Interfaces, Infrastructure, Setup, Migrations | مراجعة أي تغيير في الموديل أو الـMigration |
 
 - `IRepository<T>` و`EfRepository<T>`: عمليات القراءة والإضافة دون كشف `IQueryable` للـAPI.
+- `ServiceBase`: الأساس المشترك لخدمات الـFeatures (الوصول للمستودعات، الوقت الحالي، 404، والتقسيم لصفحات).
 - `ICompetitionQueries`: استعلامات الترتيب والإحصائيات المتخصصة.
 - `IUnitOfWork`: مشاركة DbContext واحد وحفظ العملية كاملة في معاملة واحدة.
 - `SerializableAsync`: يحمي التحقق والتحديث في عمليات المخزون والجدولة؛ `Version` يحمي من الكتابة بنسخة قديمة.
@@ -128,7 +155,7 @@ dotnet ef migrations script --idempotent --project src/Arena.Infrastructure --st
 3. اعرض فئات تذاكر الفعالية المستقبلية ثم احجز تذكرتين بالمفتاح نفسه مرتين؛ يجب أن يعود نفس الحجز.
 4. ألغ الحجز وافحص عودة المخزون؛ كرر الإلغاء للتأكد من عدم الزيادة مرتين.
 5. سجل دخول Admin لعرض إنشاء الفرق والجدولة وتصحيح النتائج.
-6. افتح `ArenaService` و`UnitOfWork` وMigration واشرح القواعد ثم شغّل الاختبارات.
+6. افتح `BookingService` و`UnitOfWork` وMigration واشرح القواعد ثم شغّل الاختبارات.
 
 ## ما يستكمله الفريق
 

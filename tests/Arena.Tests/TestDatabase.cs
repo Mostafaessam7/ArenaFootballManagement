@@ -1,6 +1,13 @@
-using Arena.Application;
-using Arena.Domain;
-using Arena.Infrastructure;
+using Arena.Application.Features.Bookings;
+using Arena.Application.Features.Events;
+using Arena.Application.Features.Players;
+using Arena.Application.Features.Results;
+using Arena.Application.Features.Tickets;
+using Arena.Application.Features.Tournaments;
+using Arena.Domain.Entities;
+using Arena.Domain.Enums;
+using Arena.Infrastructure.Persistence;
+using Arena.Infrastructure.Queries;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,22 +19,38 @@ public sealed class FixedClock(DateTime utc) : TimeProvider
     public override DateTimeOffset GetUtcNow() => new(Utc, TimeSpan.Zero);
 }
 
+/// <summary>In-memory relational SQLite database with the real services wired to one Unit of Work.</summary>
 public sealed class TestDatabase : IAsyncDisposable
 {
     public SqliteConnection Connection { get; } = new("Data Source=:memory:");
     public ArenaDbContext Db { get; }
     public FixedClock Clock { get; } = new(new DateTime(2026, 11, 15, 12, 0, 0, DateTimeKind.Utc));
-    public ArenaService Service { get; }
+    public PlayerService Players { get; }
+    public TournamentService Tournaments { get; }
+    public EventService Events { get; }
+    public ResultService Results { get; }
+    public TicketService Tickets { get; }
+    public BookingService Bookings { get; }
     public UserAccount Admin { get; } = new() { Email = "admin@test.invalid", NormalizedEmail = "ADMIN@TEST.INVALID", FullName = "Test Admin", Role = UserRole.Admin };
     public UserAccount Fan { get; } = new() { Email = "fan@test.invalid", NormalizedEmail = "FAN@TEST.INVALID", FullName = "Test Fan" };
     public UserAccount OtherFan { get; } = new() { Email = "other@test.invalid", NormalizedEmail = "OTHER@TEST.INVALID", FullName = "Other Fan" };
+
     public TestDatabase()
     {
         Connection.Open();
         Db = NewContext();
-        Service = new(new UnitOfWork(Db), new CompetitionQueries(Db), Clock);
+        var uow = new UnitOfWork(Db);
+        var queries = new CompetitionQueries(Db);
+        Players = new(uow, Clock);
+        Tournaments = new(uow, queries, Clock);
+        Events = new(uow, queries, Clock);
+        Results = new(uow, queries, Clock);
+        Tickets = new(uow, queries, Clock);
+        Bookings = new(uow, queries, Clock);
     }
+
     public ArenaDbContext NewContext() => new(new DbContextOptionsBuilder<ArenaDbContext>().UseSqlite(Connection).Options);
+
     public static async Task<TestDatabase> CreateAsync()
     {
         var fixture = new TestDatabase();
@@ -36,6 +59,7 @@ public sealed class TestDatabase : IAsyncDisposable
         await fixture.Db.SaveChangesAsync();
         return fixture;
     }
+
     public async Task<(CommunityEvent Event, TicketOffer Offer)> AddOfferAsync(int capacity = 5)
     {
         var venue = new Venue { Name = "Test ground", City = "Cairo", Address = "Test", Capacity = 100 };
@@ -48,6 +72,7 @@ public sealed class TestDatabase : IAsyncDisposable
         Db.Add(offer); await Db.SaveChangesAsync();
         return (item, offer);
     }
+
     public async Task<(Tournament Tournament, Team Home, Team Away, Venue Venue, Player Player)> CompetitionAsync()
     {
         var home = new Team { Name = "Home", Code = "HOM", City = "Cairo" };
@@ -63,5 +88,6 @@ public sealed class TestDatabase : IAsyncDisposable
         await Db.SaveChangesAsync();
         return (tournament, home, away, venue, player);
     }
+
     public async ValueTask DisposeAsync() { await Db.DisposeAsync(); await Connection.DisposeAsync(); }
 }

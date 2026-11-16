@@ -1,9 +1,11 @@
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using Arena.Application;
-using Arena.Domain;
-using Arena.Infrastructure;
+using Arena.Application.Features.Auth;
+using Arena.Application.Features.Teams;
+using Arena.Domain.Entities;
+using Arena.Domain.Enums;
+using Arena.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;

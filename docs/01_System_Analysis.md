@@ -271,7 +271,7 @@ SQL Server هو مزود التسليم الأساسي. تستخدم نسخة ا
 الطبقة | المسؤولية | أمثلة
 --- | --- | ---
 Arena.Domain | الكيانات وحالات النظام فقط | Team وMatchEvent وBooking وUserRole
-Arena.Application | قواعد العمل والعقود وواجهات الوصول للبيانات | ArenaService وIRepository وIUnitOfWork وStandingsCalculator
+Arena.Application | قواعد العمل والعقود وواجهات الوصول للبيانات | خدمة لكل Feature مثل TeamService وBookingService، وIRepository وIUnitOfWork وStandingsCalculator
 Arena.Infrastructure | تفاصيل التخزين والاستعلامات وEF Core | ArenaDbContext وEfRepository وUnitOfWork وMigrations
 Arena.Api | HTTP والتحقق من المدخلات والمصادقة والتوثيق | Controllers وAuthService وProblemDetails وOpenAPI
 
@@ -281,7 +281,7 @@ IRepository و Unit of Work
 
 يوفر المستودع القراءة بمعرف أو شرط، والقوائم المقسمة والعد والإضافة والإزالة. لا يخرج IQueryable إلى طبقة التطبيق. يستخدم ICompetitionQueries استعلامات متخصصة للترتيب والهدافين والتعارض والمخزون. تحتفظ UnitOfWork بنفس DbContext داخل الطلب، وتنسق الحفظ والمعاملات.
 
-مثال الحجز: Controller يستخرج هوية المستخدم، وArenaService يفحص القواعد، والمستودعات تحمل العرض والحجز، وUnitOfWork تحفظ المخزون والحجز والتذاكر داخل معاملة. تخصيص مستودعات لخدمات المجال يبرر النمط رغم أن EF Core يقدم أصلًا آليات تتبع ومعاملات مشابهة.
+مثال الحجز: BookingsController يستخرج هوية المستخدم، وBookingService يفحص القواعد، والمستودعات تحمل العرض والحجز، وUnitOfWork تحفظ المخزون والحجز والتذاكر داخل معاملة. تخصيص مستودعات لخدمات المجال يبرر النمط رغم أن EF Core يقدم أصلًا آليات تتبع ومعاملات مشابهة.
 
 إدارة تغييرات القاعدة
 

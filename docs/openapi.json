@@ -1608,7 +1608,7 @@
     "/api/v1/events/{id}/result": {
       "put": {
         "tags": [
-          "Events"
+          "Results"
         ],
         "parameters": [
           {
@@ -1674,7 +1674,7 @@
     "/api/v1/events/{id}/result-history": {
       "get": {
         "tags": [
-          "Events"
+          "Results"
         ],
         "parameters": [
           {
@@ -1746,7 +1746,7 @@
     "/api/v1/events/{id}/player-stats": {
       "put": {
         "tags": [
-          "Events"
+          "Results"
         ],
         "parameters": [
           {
@@ -1810,7 +1810,7 @@
       },
       "get": {
         "tags": [
-          "Events"
+          "Results"
         ],
         "parameters": [
           {
@@ -1877,7 +1877,7 @@
     "/api/v1/events/{id}/ticket-offers": {
       "post": {
         "tags": [
-          "Events"
+          "Tickets"
         ],
         "parameters": [
           {
@@ -1941,7 +1941,7 @@
       },
       "get": {
         "tags": [
-          "Events"
+          "Tickets"
         ],
         "parameters": [
           {
@@ -2008,7 +2008,7 @@
     "/api/v1/events/{id}/check-in": {
       "post": {
         "tags": [
-          "Events"
+          "Tickets"
         ],
         "parameters": [
           {
@@ -4293,6 +4293,12 @@
     },
     {
       "name": "Events"
+    },
+    {
+      "name": "Results"
+    },
+    {
+      "name": "Tickets"
     },
     {
       "name": "Bookings"
