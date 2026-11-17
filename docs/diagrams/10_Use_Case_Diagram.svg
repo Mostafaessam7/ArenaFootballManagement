@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1060" viewBox="0 0 1500 1060">
+<rect width="1500" height="1060" fill="#ffffff"/>
+<text x="750" y="34" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2937" text-anchor="middle">Use case diagram</text>
+<rect x="310" y="62" width="880" height="950" rx="10" fill="#fbfdff" stroke="#245a8d" stroke-width="1.6"/>
+<text x="750" y="88" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#245a8d" text-anchor="middle">Arena Football Management API</text>
+<g stroke="#1f2937" stroke-width="2" fill="none"><circle cx="140" cy="136" r="13"/><line x1="140" y1="149" x2="140" y2="182"/><line x1="118" y1="162" x2="162" y2="162"/><line x1="140" y1="182" x2="123" y2="208"/><line x1="140" y1="182" x2="157" y2="208"/></g>
+<text x="140" y="230" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle" direction="rtl">زائر</text>
+<text x="140" y="248" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Visitor</text>
+<g stroke="#1f2937" stroke-width="2" fill="none"><circle cx="140" cy="436" r="13"/><line x1="140" y1="449" x2="140" y2="482"/><line x1="118" y1="462" x2="162" y2="462"/><line x1="140" y1="482" x2="123" y2="508"/><line x1="140" y1="482" x2="157" y2="508"/></g>
+<text x="140" y="530" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle" direction="rtl">الجمهور</text>
+<text x="140" y="548" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Spectator</text>
+<g stroke="#1f2937" stroke-width="2" fill="none"><circle cx="140" cy="826" r="13"/><line x1="140" y1="839" x2="140" y2="872"/><line x1="118" y1="852" x2="162" y2="852"/><line x1="140" y1="872" x2="123" y2="898"/><line x1="140" y1="872" x2="157" y2="898"/></g>
+<text x="140" y="920" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle" direction="rtl">مدير الفريق</text>
+<text x="140" y="938" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">TeamManager</text>
+<g stroke="#1f2937" stroke-width="2" fill="none"><circle cx="1370" cy="296" r="13"/><line x1="1370" y1="309" x2="1370" y2="342"/><line x1="1348" y1="322" x2="1392" y2="322"/><line x1="1370" y1="342" x2="1353" y2="368"/><line x1="1370" y1="342" x2="1387" y2="368"/></g>
+<text x="1370" y="390" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle" direction="rtl">المنظم</text>
+<text x="1370" y="408" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Organizer</text>
+<g stroke="#1f2937" stroke-width="2" fill="none"><circle cx="1370" cy="646" r="13"/><line x1="1370" y1="659" x2="1370" y2="692"/><line x1="1348" y1="672" x2="1392" y2="672"/><line x1="1370" y1="692" x2="1353" y2="718"/><line x1="1370" y1="692" x2="1387" y2="718"/></g>
+<text x="1370" y="740" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle" direction="rtl">مدير النظام</text>
+<text x="1370" y="758" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Admin</text>
+<g stroke="#1f2937" stroke-width="2" fill="none"><circle cx="1370" cy="886" r="13"/><line x1="1370" y1="899" x2="1370" y2="932"/><line x1="1348" y1="912" x2="1392" y2="912"/><line x1="1370" y1="932" x2="1353" y2="958"/><line x1="1370" y1="932" x2="1387" y2="958"/></g>
+<text x="1370" y="980" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle" direction="rtl">موظف البوابة</text>
+<text x="1370" y="998" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">GateStaff</text>
+<path d="M140.0,414.0 L140.0,278.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<polygon points="140,262 132.2,278.2 147.8,278.2" fill="#ffffff" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1370.0,624.0 L1370.0,438.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<polygon points="1370,422 1362.2,438.2 1377.8,438.2" fill="#ffffff" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1370.0,772.0 L1370.0,848.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<polygon points="1370,864 1377.8,847.8 1362.2,847.8" fill="#ffffff" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M168.0,170.0 L355.4,140.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M168.0,170.0 L355.4,220.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M168.0,170.0 L355.4,300.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M168.0,470.0 L355.4,430.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M168.0,470.0 L355.4,515.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M168.0,860.0 L355.4,890.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,135.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,205.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,275.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,345.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,415.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,485.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,555.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,625.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,330.0 L1124.6,695.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,680.0 L1124.6,800.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<path d="M1342.0,920.0 L1124.6,940.0" fill="none" stroke="#4b5563" stroke-width="1.3"/>
+<ellipse cx="520" cy="140" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="520" y="145" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC01  التسجيل وتسجيل الدخول</text>
+<ellipse cx="520" cy="220" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="520" y="225" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC11  عرض الجدول والترتيب والهدافين</text>
+<ellipse cx="520" cy="300" rx="168" ry="27" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="520" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC17  استعادة كلمة المرور (لاحق)</text>
+<ellipse cx="520" cy="430" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="520" y="435" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC08  حجز تذاكر</text>
+<ellipse cx="520" cy="515" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="520" y="520" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC09  إلغاء حجز</text>
+<ellipse cx="520" cy="890" rx="168" ry="27" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="520" y="895" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC15  إدارة الفريق ذاتيًا (لاحق)</text>
+<ellipse cx="960" cy="135" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="140" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC02  إدارة الفرق واللاعبين والانتقالات</text>
+<ellipse cx="960" cy="205" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="210" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC03  تجهيز بطولة وقوائم لاعبيها</text>
+<ellipse cx="960" cy="275" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="280" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC04  جدولة مباراة أو فعالية</text>
+<ellipse cx="960" cy="345" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="350" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC05  اعتماد النتيجة وتصحيحها</text>
+<ellipse cx="960" cy="415" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="420" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC06  تسجيل إحصائيات اللاعبين</text>
+<ellipse cx="960" cy="485" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="490" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC07  إنشاء فئات التذاكر</text>
+<ellipse cx="960" cy="555" rx="168" ry="27" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="960" y="560" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC13  تعديل أو إلغاء فعالية (لاحق)</text>
+<ellipse cx="960" cy="625" rx="168" ry="27" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="960" y="630" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC14  إنهاء البطولة (لاحق)</text>
+<ellipse cx="960" cy="695" rx="168" ry="27" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="960" y="700" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC16  البحث والتقارير (لاحق)</text>
+<ellipse cx="960" cy="800" rx="168" ry="27" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="960" y="805" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC12  إدارة حسابات الموظفين (لاحق)</text>
+<ellipse cx="960" cy="940" rx="168" ry="27" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.5"/>
+<text x="960" y="945" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" fill="#1f2937" text-anchor="middle" direction="rtl">UC10  فحص التذكرة عند الدخول</text>
+<text x="40" y="1042" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">Solid ellipse = implemented in week 1; dashed = analysed, planned. Hollow arrow = actor inherits the use cases of the parent actor (Spectator is a signed-in Visitor; Admin can do everything Organizer and GateStaff do).</text>
+</svg>

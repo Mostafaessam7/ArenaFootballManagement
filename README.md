@@ -4,8 +4,8 @@
 
 ## ابدأ هنا
 
-1. اقرأ `docs/01_System_Analysis.docx` مع الفريق واعتمد النطاق وحالات الاستخدام.
-2. راجع `docs/02_Database_Design_and_Mapping.docx` والعلاقات في `docs/diagrams`.
+1. اقرأ `docs/01_System_Analysis.docx` مع الفريق واعتمد النطاق وحالات الاستخدام (17 حالة ومخطط Use Case).
+2. راجع `docs/02_Database_Design_and_Mapping.docx`: الـ EERD بترميز Chen وخطوات التحويل وقاموس البيانات.
 3. افتح `Arena.sln` في محرر يدعم .NET 10، أو استخدم الطرفية.
 4. شغّل نسخة العرض التالية، ثم جرّب `requests/Arena.http` أو صفحة Scalar.
 
@@ -173,6 +173,31 @@ dotnet ef migrations script --idempotent --project src/Arena.Infrastructure --st
 4. ألغ الحجز وافحص عودة المخزون؛ كرر الإلغاء للتأكد من عدم الزيادة مرتين.
 5. سجل دخول Admin لعرض إنشاء الفرق والجدولة وتصحيح النتائج.
 6. افتح `BookingService` و`UnitOfWork` وMigration واشرح القواعد ثم شغّل الاختبارات.
+
+## تعديل الوثائق
+
+ملفات الوورد مبنية من ملفات Markdown في `docs`، فالتعديل يكون في الـ Markdown ثم يُعاد البناء. كده الوورد والـ Markdown دايمًا متطابقين، وأي تعديل يظهر في Git كسطور واضحة.
+
+| الملف | المصدر |
+|---|---|
+| `docs/01_System_Analysis.docx` | `docs/01_System_Analysis.md` |
+| `docs/02_Database_Design_and_Mapping.docx` | `docs/02_Database_Design_and_Mapping.md`، وجداول القاموس والمفاتيح والقيود تتولد تلقائيًا من `database/schema.json` |
+| `docs/diagrams/06` إلى `10` (EERD و Use Case) | `docs/tools/diagrams.js` |
+
+```powershell
+Set-Location docs/tools
+npm install                     # أول مرة فقط
+npm run diagrams                # لو اتعدل diagrams.js
+.\render-diagrams.ps1           # SVG إلى PNG عن طريق Microsoft Edge
+npm run docs                    # يبني ملفات الوورد
+.\word-export.ps1               # يحدّث الفهرس وأرقام الصفحات في Word (اختياري: -Pdf)
+```
+
+لو اتغير الموديل، صدّر المخطط الأول ثم ابنِ الوثائق:
+
+```powershell
+dotnet run --project src/Arena.Api -- --export-schema database/schema.json
+```
 
 ## ما يستكمله الفريق
 

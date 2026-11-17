@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="980" viewBox="0 0 1640 980">
+<rect width="1640" height="980" fill="#ffffff"/>
+<text x="820" y="34" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2937" text-anchor="middle">EERD (3/3) - Accounts and ticketing</text>
+<path d="M213.3,278.0 L114.4,231.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="90" cy="220" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="90" y="224.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">UserId</text>
+<line x1="67.75" y1="227" x2="112.25" y2="227" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M252.3,278.0 L225.2,199.9" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="220" cy="185" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="220" y="189.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">FullName</text>
+<path d="M280.0,278.0 L347.2,204.1" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="360" cy="190" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="360" y="194.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Email</text>
+<path d="M201.0,295.2 L129.7,289.4" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="75" cy="285" rx="57.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="75" y="289.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">PasswordHash</text>
+<path d="M201.0,315.9 L106.4,341.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="75" cy="350" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="75" y="354.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Role</text>
+<path d="M237.0,322.0 L154.7,400.9" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="140" cy="415" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="140" y="419.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">IsActive</text>
+<path d="M727.0,278.0 L630.3,213.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="610" cy="200" rx="46.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="610" y="204.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">BookingId</text>
+<line x1="577.25" y1="207" x2="642.75" y2="207" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M756.3,278.0 L742.5,195.0" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="740" cy="180" rx="42.625" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="740" y="184.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Quantity</text>
+<path d="M782.0,278.0 L855.7,204.3" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="870" cy="190" rx="46.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="870" y="194.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">UnitPrice</text>
+<path d="M819.0,282.6 L899.5,259.0" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="930" cy="250" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="930" y="254.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Status</text>
+<path d="M701.0,286.7 L606.3,265.4" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="560" cy="255" rx="64.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="560" y="259.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">IdempotencyKey</text>
+<path d="M708.7,322.0 L613.7,362.7" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="585" cy="375" rx="50.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="585" y="379.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">CreatedUtc</text>
+<path d="M819.0,321.7 L916.8,357.8" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="950" cy="370" rx="57.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="950" y="374.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">CancelledUtc</text>
+<path d="M778.7,322.0 L862.6,420.4" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="875" cy="435" rx="53.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="875" y="439.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">TotalAmount</text>
+<path d="M701.0,666.1 L625.8,648.4" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="590" cy="640" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="590" y="644.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">TicketId</text>
+<line x1="560.75" y1="647" x2="619.25" y2="647" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M705.0,702.0 L636.7,729.3" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="610" cy="740" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="610" y="744.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Code</text>
+<path d="M768.4,702.0 L794.3,770.1" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="800" cy="785" rx="57.875" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="800" y="789.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">CheckedInUtc</text>
+<path d="M1202.9,278.0 L1101.3,217.7" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1080" cy="205" rx="39.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1080" y="209.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">OfferId</text>
+<line x1="1054.25" y1="212" x2="1105.75" y2="212" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M1231.8,278.0 L1200.6,194.8" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1195" cy="180" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1195" y="184.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Name</text>
+<path d="M1252.8,278.0 L1301.5,194.6" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1310" cy="180" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1310" y="184.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Price</text>
+<path d="M1312.4,289.1 L1400.8,275.9" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1440" cy="270" rx="42.625" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1440" y="274.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Capacity</text>
+<path d="M1312.4,310.3 L1399.7,322.8" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1450" cy="330" rx="57.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1450" y="334.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">SoldQuantity</text>
+<path d="M1281.7,322.0 L1395.8,382.2" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1420" cy="395" rx="46.125" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2" stroke-dasharray="5 3"/>
+<text x="1420" y="399.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Remaining</text>
+<path d="M1285.0,278.0 L1428.3,208.0" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<path d="M1439.3,180.7 L1410.8,154.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1395" cy="140" rx="61.375" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1395" y="144.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">SalesStartUtc</text>
+<path d="M1473.0,180.9 L1507.0,154.2" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1525" cy="140" rx="54.375" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1525" y="144.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">SalesEndUtc</text>
+<ellipse cx="1455" cy="195" rx="53.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1455" y="199.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">SalesWindow</text>
+<path d="M319.0,300.0 L454.0,300.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M701.0,302.6 L566.0,302.6" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M701.0,297.4 L566.0,297.4" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M1167.6,300.0 L1064.2,300.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M819.0,297.4 L935.9,297.4" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M819.0,302.6 L935.9,302.6" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M762.6,322.0 L762.6,463.0" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M757.4,322.0 L757.4,463.0" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M757.4,658.0 L757.4,517.0" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M762.6,658.0 L762.6,517.0" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M260.0,322.0 L260.0,653.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M701.0,680.0 L330.5,680.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1240.0,658.0 L1240.0,517.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1242.6,322.0 L1242.6,463.0" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M1237.4,322.0 L1237.4,463.0" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<text x="407.8" y="294.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="612.2" y="316.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="1106.6" y="316.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="891.8" y="294.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="771.0" y="421.1" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="749.0" y="568.9" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="271.0" y="588.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="405.0" y="696.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="1229.0" y="568.9" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="1251.0" y="421.1" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<polygon points="510,273 566,300 510,327 454,300" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="510" y="304.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">PLACES</text>
+<polygon points="1000,273 1064.15,300 1000,327 935.85,300" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="1000" y="304.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">RESERVES</text>
+<polygon points="760,463 816,490 760,517 704,490" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="760" y="494.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">ISSUES</text>
+<polygon points="260,653 330.54375,680 260,707 189.45625,680" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="260" y="684.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">CHECKS_IN</text>
+<polygon points="1240,463 1296,490 1240,517 1184,490" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="1240" y="494.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">SELLS</text>
+<rect x="201" y="278" width="118" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="260" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">USER</text>
+<rect x="701" y="278" width="118" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="760" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">BOOKING</text>
+<rect x="701" y="658" width="118" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="760" y="685" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">TICKET</text>
+<rect x="1167.56" y="278" width="144.88" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="1240" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">TICKET_OFFER</text>
+<rect x="1172.18" y="658" width="135.64" height="44" rx="2" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.7" stroke-dasharray="6 3"/>
+<text x="1240" y="685" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#6b7280" text-anchor="middle">SPORT_EVENT</text>
+<text x="40" y="910" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">USER.Role is one of Admin, Organizer, TeamManager, Spectator, GateStaff (one role per account). Email is a unique candidate key.</text>
+<text x="40" y="932" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">A booking issues exactly Quantity tickets; (User, IdempotencyKey) is unique. Sum of offer capacities per event &lt;= venue capacity.</text>
+<text x="40" y="954" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">TotalAmount = Quantity x UnitPrice and Remaining = Capacity - SoldQuantity are derived. Ticket Code is unique.</text>
+<rect x="840" y="560" width="300" height="296" rx="6" fill="#ffffff" stroke="#d1d5db"/><text x="852" y="577" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#1f2937">Notation (Chen / EER)</text><rect x="852" y="589" width="44" height="18" fill="#e8f1fb" stroke="#245a8d"/><text x="910" y="602.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Entity</text><rect x="852" y="619" width="44" height="18" fill="#e8f1fb" stroke="#245a8d"/><rect x="856" y="623" width="36" height="10" fill="none" stroke="#245a8d"/><text x="910" y="632.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Weak entity</text><polygon points="874,647 896,658 874,669 852,658" fill="#fff4de" stroke="#a86512"/><text x="910" y="662.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Relationship</text><polygon points="874,677 896,688 874,699 852,688" fill="#fff4de" stroke="#a86512"/><polygon points="874,682 887,688 874,694 861,688" fill="none" stroke="#a86512"/><text x="910" y="692.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Identifying relationship</text><ellipse cx="874" cy="718" rx="22" ry="9" fill="#fff" stroke="#5b6472"/><line x1="862" y1="722" x2="886" y2="722" stroke="#1f2937"/><text x="910" y="722.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Key attribute (dashed = partial key)</text><ellipse cx="874" cy="748" rx="22" ry="9" fill="#fff" stroke="#5b6472" stroke-dasharray="4 2"/><text x="910" y="752.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Derived attribute (not stored)</text><line x1="850" y1="775.5" x2="898" y2="775.5" stroke="#1f2937"/><line x1="850" y1="780.5" x2="898" y2="780.5" stroke="#1f2937"/><text x="910" y="782.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Total participation (single = partial)</text><text x="860" y="813" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#b42318">1 N M</text><text x="910" y="812.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Cardinality ratio</text><circle cx="874" cy="838" r="10" fill="#fff" stroke="#1f2937"/><text x="874" y="842.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">d</text><text x="910" y="842.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12" fill="#1f2937">Disjoint specialization</text>
+</svg>

@@ -1,0 +1,12 @@
+{
+  "name": "arena-docs-tools",
+  "private": true,
+  "description": "Builds the Word deliverables and the diagrams from the sources in docs/.",
+  "scripts": {
+    "diagrams": "node diagrams.js",
+    "docs": "node build-docs.js"
+  },
+  "dependencies": {
+    "docx": "9.5.1"
+  }
+}

@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="980" viewBox="0 0 1560 980">
+<rect width="1560" height="980" fill="#ffffff"/>
+<text x="780" y="34" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2937" text-anchor="middle">EERD (1/3) - Teams, players and competitions</text>
+<path d="M212.9,278.0 L135.8,242.0" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="110" cy="230" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="110" y="234.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">PlayerId</text>
+<line x1="80.75" y1="237" x2="139.25" y2="237" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M201.0,296.5 L132.6,292.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="90" cy="290" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="90" y="294.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">FullName</text>
+<path d="M201.0,318.4 L133.5,339.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="100" cy="350" rx="46.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="100" y="354.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">BirthDate</text>
+<path d="M238.0,322.0 L164.4,395.6" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="150" cy="410" rx="53.125" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="150" y="414.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Nationality</text>
+<path d="M296.2,322.0 L378.6,372.0" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="400" cy="385" rx="42.625" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="400" y="389.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Position</text>
+<path d="M238.0,722.0 L164.2,795.8" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="150" cy="810" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="150" y="814.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">JoinedOn</text>
+<line x1="120.75" y1="817" x2="179.25" y2="817" stroke="#1f2937" stroke-width="1.2" stroke-dasharray="4 2.5"/>
+<path d="M272.0,722.0 L312.0,795.3" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="320" cy="810" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="320" y="814.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">LeftOn</text>
+<path d="M748.0,722.0 L708.0,795.3" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="700" cy="810" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="700" y="814.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">TeamId</text>
+<line x1="677.75" y1="817" x2="722.25" y2="817" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M774.0,722.0 L820.7,795.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="830" cy="810" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="830" y="814.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Name</text>
+<path d="M721.5,678.0 L641.6,632.3" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="620" cy="620" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="620" y="624.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Code</text>
+<path d="M723.3,722.0 L630.9,777.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="610" cy="790" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="610" y="794.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">City</text>
+<path d="M819.0,693.4 L898.8,684.6" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="940" cy="680" rx="43.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="940" y="684.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">IsActive</text>
+<path d="M600.0,118.0 L600.0,80.0" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="600" cy="65" rx="53.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="600" y="69.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">ShirtNumber</text>
+<path d="M1322.7,278.0 L1295.0,194.9" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1290" cy="180" rx="57.25" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1290" y="184.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">TournamentId</text>
+<line x1="1246.75" y1="187" x2="1333.25" y2="187" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M1354.0,278.0 L1435.0,203.8" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1450" cy="190" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1450" y="194.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Name</text>
+<path d="M1393.2,283.7 L1473.2,263.2" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1505" cy="255" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1505" y="259.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Season</text>
+<path d="M1393.2,314.4 L1472.1,332.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1505" cy="340" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1505" y="344.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Status</text>
+<path d="M1302.5,322.0 L1196.8,406.5" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<path d="M1163.2,433.5 L1122.4,466.1" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1105" cy="480" rx="46.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1105" y="484.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">StartDate</text>
+<path d="M1195.9,433.6 L1234.0,466.3" fill="none" stroke="#5b6472" stroke-width="1.1"/>
+<ellipse cx="1250" cy="480" rx="39.75" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1250" y="484.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">EndDate</text>
+<ellipse cx="1180" cy="420" rx="38" ry="15" fill="#ffffff" stroke="#5b6472" stroke-width="1.2"/>
+<text x="1180" y="424.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#1f2937" text-anchor="middle">Period</text>
+<path d="M260.0,322.0 L260.0,473.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M257.4,678.0 L257.4,527.0" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M262.6,678.0 L262.6,527.0" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M323.2,697.4 L452.2,697.4" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M323.2,702.6 L452.2,702.6" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M701.0,700.0 L567.8,700.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M304.0,278.0 L390.7,234.7" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M551.6,164.4 L452.3,208.5" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M549.4,159.6 L450.1,203.8" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M896.0,278.0 L807.5,233.7" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M650.6,159.6 L751.9,204.7" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M648.4,164.4 L749.8,209.4" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M769.9,678.0 L840.0,522.2" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M932.5,323.1 L862.4,478.9" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M927.7,320.9 L857.6,476.7" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M1266.8,300.0 L1204.2,300.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1012.4,297.4 L1075.8,297.4" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M1012.4,302.6 L1075.8,302.6" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<path d="M1271.0,825.8 L1078.1,779.2" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M819.0,714.8 L1002.4,760.6" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1330.0,818.0 L1330.0,597.0" fill="none" stroke="#1f2937" stroke-width="1.4"/>
+<path d="M1332.6,322.0 L1332.6,543.0" fill="none" stroke="#1f2937" stroke-width="1.2"/><path d="M1327.4,322.0 L1327.4,543.0" fill="none" stroke="#1f2937" stroke-width="1.2"/>
+<text x="271.0" y="429.9" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="249.0" y="580.1" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="406.8" y="694.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="613.7" y="716.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="349.4" y="248.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="495.0" y="203.7" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="839.7" y="267.2" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="715.8" y="184.4" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="809.3" y="568.7" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="890.7" y="441.3" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="1230.5" y="316.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="1049.2" y="294.0" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="1127.8" y="807.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="953.9" y="742.1" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<text x="1319.0" y="658.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">1</text>
+<text x="1341.0" y="491.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="15" font-weight="700" fill="#b42318" text-anchor="middle">N</text>
+<polygon points="260,473 316,500 260,527 204,500" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<polygon points="260,478 306.5,500 260,522 213.5,500" fill="none" stroke="#a86512" stroke-width="1.3"/>
+<text x="260" y="504.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">HAS</text>
+<polygon points="510,673 567.75625,700 510,727 452.24375,700" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="510" y="704.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">IN_TEAM</text>
+<polygon points="420,193 484.15,220 420,247 355.85,220" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<polygon points="420,198 474.65,220 420,242 365.35,220" fill="none" stroke="#a86512" stroke-width="1.3"/>
+<text x="420" y="224.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">SELECTED</text>
+<polygon points="780,193 836,220 780,247 724,220" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<polygon points="780,198 826.5,220 780,242 733.5,220" fill="none" stroke="#a86512" stroke-width="1.3"/>
+<text x="780" y="224.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">LISTS</text>
+<polygon points="850,473 906,500 850,527 794,500" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<polygon points="850,478 896.5,500 850,522 803.5,500" fill="none" stroke="#a86512" stroke-width="1.3"/>
+<text x="850" y="504.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">ENTERS</text>
+<polygon points="1140,273 1204.15,300 1140,327 1075.85,300" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<polygon points="1140,278 1194.65,300 1140,322 1085.35,300" fill="none" stroke="#a86512" stroke-width="1.3"/>
+<text x="1140" y="304.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">INCLUDES</text>
+<polygon points="1040,743 1097.75625,770 1040,797 982.24375,770" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="1040" y="774.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">MANAGES</text>
+<polygon points="1330,543 1400.54375,570 1330,597 1259.45625,570" fill="#fff4de" stroke="#a86512" stroke-width="1.6"/>
+<text x="1330" y="574.5" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#1f2937" text-anchor="middle">ORGANIZES</text>
+<rect x="201" y="278" width="118" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="260" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">PLAYER</text>
+<rect x="196.8" y="678" width="126.39999999999999" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<rect x="201.8" y="683" width="116.39999999999999" height="34" fill="none" stroke="#245a8d" stroke-width="1.3"/>
+<text x="260" y="705" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">MEMBERSHIP</text>
+<rect x="701" y="678" width="118" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="760" y="705" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">TEAM</text>
+<rect x="527.56" y="118" width="144.88" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<rect x="532.56" y="123" width="134.88" height="34" fill="none" stroke="#245a8d" stroke-width="1.3"/>
+<text x="600" y="145" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">ROSTER_ENTRY</text>
+<rect x="867.56" y="278" width="144.88" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<rect x="872.56" y="283" width="134.88" height="34" fill="none" stroke="#245a8d" stroke-width="1.3"/>
+<text x="940" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">REGISTRATION</text>
+<rect x="1266.8" y="278" width="126.39999999999999" height="44" rx="2" fill="#e8f1fb" stroke="#245a8d" stroke-width="1.7"/>
+<text x="1330" y="305" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2937" text-anchor="middle">TOURNAMENT</text>
+<rect x="1271" y="818" width="118" height="44" rx="2" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.7" stroke-dasharray="6 3"/>
+<text x="1330" y="845" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="14" font-weight="700" fill="#6b7280" text-anchor="middle">USER</text>
+<text x="40" y="900" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">Rules not shown by cardinality: a player has at most one open MEMBERSHIP (LeftOn empty); a player has one ROSTER_ENTRY per tournament;</text>
+<text x="40" y="922" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">shirt numbers are unique inside a registration; Code is a unique candidate key of TEAM; (Name, Season) is unique for TOURNAMENT.</text>
+<text x="40" y="944" font-family="'Segoe UI', Tahoma, Arial, sans-serif" font-size="12.5" fill="#6b7280">USER (grey, dashed) is detailed in diagram 3/3.</text>
+</svg>
